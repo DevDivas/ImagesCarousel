@@ -14,7 +14,7 @@ function randomCaption() {
 
 
 let uniq_id = 1;
-let str = '';
+let str = 'id, url, home_id, order, caption\n';
 
 for (let home_id = 1; home_id <= 100; home_id++) {
   //handle exterior

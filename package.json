@@ -24,6 +24,7 @@
     "webpack": "^4.16.1"
   },
   "devDependencies": {
+    "csv-parser": "^1.12.1",
     "eslint": "^5.1.0",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-config-airbnb-base": "^13.0.0",
