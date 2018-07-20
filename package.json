@@ -25,12 +25,11 @@
     "webpack": "^4.16.1"
   },
   "devDependencies": {
-    "csv-parser": "^1.12.1",
-    "eslint": "^5.1.0",
+    "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
-    "eslint-config-airbnb-base": "^13.0.0",
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
     "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.10.0",
     "webpack-cli": "^3.1.0"
   },
   "version": "1.0.0",
