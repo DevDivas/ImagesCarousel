@@ -1,8 +1,9 @@
+import Stage from './components/Stage.jsx';
+import Carousel from './components/Carousel.jsx';
+
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-import Stage from './components/Stage.jsx';
-import Carousel from './components/Carousel.jsx';
 
 class App extends React.Component {
   constructor() {
