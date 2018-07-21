@@ -3,15 +3,29 @@ import Carousel from './components/Carousel.jsx';
 
 const React = require('react');
 const ReactDOM = require('react-dom');
+const axios = require('axios');
 
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      staged: "https://s3-us-west-1.amazonaws.com/homesnap/exterior/h81.jpg",
-      collection: ["https://s3-us-west-1.amazonaws.com/homesnap/exterior/h81.jpg", "https://s3-us-west-1.amazonaws.com/homesnap/bedroom/b7.jpg", "https://s3-us-west-1.amazonaws.com/homesnap/kitchen/k10.jpg", "https://s3-us-west-1.amazonaws.com/homesnap/dining/d9.jpg", "https://s3-us-west-1.amazonaws.com/homesnap/dining/d6.jpg", "https://s3-us-west-1.amazonaws.com/homesnap/outer/o6.jpg"]
+      staged: {},
+      collection: [],
     };
+  }
+
+  componentDidMount() {
+    axios.get('/rooms/81')
+      .then((res) => {
+        this.setState({
+          staged: res.data[0],
+          collection: res.data,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   render() {

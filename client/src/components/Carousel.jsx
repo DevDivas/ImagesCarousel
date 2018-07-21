@@ -6,7 +6,7 @@ const Carousel = (props) => {
       <ul>
         {
           props.collection.map((pic) => {
-            return <img src={pic} width="100px" height="67px" alt=""/>;
+            return <span key={''+pic.id}><img src={pic.url} width="100px" height="67px" alt=""/></span>;
           })
         }
       </ul>
