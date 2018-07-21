@@ -16,7 +16,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/rooms/81')
+    axios.get('/rooms/100')
       .then((res) => {
         this.setState({
           staged: res.data[0],
