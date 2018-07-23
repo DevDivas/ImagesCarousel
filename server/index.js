@@ -26,6 +26,4 @@ app.get('/rooms/:roomId', (req, res) => {
   });
 });
 
-// Set port to listen to
-const port = 3001;
-app.listen(port, () => console.log(`Listening to port ${port}...`));
+module.exports = app;

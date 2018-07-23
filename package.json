@@ -8,7 +8,7 @@
   },
   "scripts": {
     "watch": "webpack -d --watch",
-    "server": "nodemon server/index.js",
+    "server": "nodemon server/listen.js",
     "build": "node database/csv_gen.js && node database/index.js",
     "test": "jest"
   },
@@ -24,6 +24,8 @@
     "nodemon": "^1.18.3",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "superagent": "^3.8.3",
+    "supertest": "^3.1.0",
     "webpack": "^4.16.1"
   },
   "devDependencies": {

@@ -48,7 +48,7 @@ fs.readFile(path.join(__dirname, '/data.csv'), 'utf8', (err, data) => {
 
 // fetch function
 const fetchRoomPics = (roomId, callback) => {
-  Asset.find({ home_id: roomId }, '-_id -__v' ,(err, docs) => {
+  Asset.find({ home_id: roomId }, '-_id -__v', (err, docs) => {
     if (err) {
       console.log('Error fetching pics');
       callback(err);
@@ -60,5 +60,5 @@ const fetchRoomPics = (roomId, callback) => {
 };
 
 module.exports = {
-  fetchRoomPics
+  fetchRoomPics,
 };
