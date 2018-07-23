@@ -45,3 +45,20 @@ fs.readFile(path.join(__dirname, '/data.csv'), 'utf8', (err, data) => {
     console.log('InsertMany success');
   });
 });
+
+// fetch function
+const fetchRoomPics = (roomId, callback) => {
+  Asset.find({ home_id: roomId }, '-_id -__v', (err, docs) => {
+    if (err) {
+      console.log('Error fetching pics');
+      callback(err);
+      return;
+    }
+    console.log('Pics fetched');
+    callback(null, docs);
+  });
+};
+
+module.exports = {
+  fetchRoomPics,
+};
