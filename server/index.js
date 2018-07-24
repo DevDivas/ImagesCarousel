@@ -22,7 +22,7 @@ app.get('/rooms/:roomId', (req, res) => {
     if (err) {
       throw err;
     }
-    res.send(data);
+    res.status(200).send(data);
   });
 });
 
