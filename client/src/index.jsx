@@ -1,5 +1,6 @@
 import Stage from './components/Stage.jsx';
-import Carousel from './components/Carousel.jsx';
+import Modal from './components/Modal.jsx';
+// import Carousel from './components/Carousel.jsx';
 
 const React = require('react');
 const ReactDOM = require('react-dom');
@@ -32,7 +33,7 @@ class App extends React.Component {
     return (
       <div>
         <Stage staged={this.state.staged}/>
-        <Carousel collection={this.state.collection}/>
+        <Modal staged={this.state.staged} collection={this.state.collection}/>
       </div>
     );
   }

@@ -1,0 +1,61 @@
+.modal {
+  /* display: none; */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: auto;
+}
+
+.modal-content {
+  background-color: transparent;
+  margin: 5% auto;
+  padding: 10px;
+  width: 60%;
+}
+
+.closeBtn {
+  color: #fff;
+  font-size: 70px;
+  float: right;
+  padding: 16px 28px 8px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.prevBtn {
+  color: #fff;
+  font-size: 17vw;
+  float: left;
+  margin: 15% 1%;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.nextBtn {
+  color: #fff;
+  font-size: 17vw;
+  float: right;
+  margin: 15% 1%;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.focusContain {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 1px solid red;
+}
+
+.focusImage {
+  max-width: 100%;
+  height: 100%;
+  /* vertical-align: middle; */
+}
