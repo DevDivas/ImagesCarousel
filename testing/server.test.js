@@ -13,7 +13,7 @@ const db = require('../database/index.js');
 
 describe('Test fetching room pics', () => {
   test('should have the same unique exterior object', () => {
-    db.fetchRoomPics(12, (err, docs) => {
+    db.fetchRoomPics(13, (err, docs) => {
       if (err) {
         console.log('error during testing');
         return;
