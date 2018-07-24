@@ -3,13 +3,13 @@ const app = require('../server/index.js');
 const db = require('../database/index.js');
 
 // Check to see if a GET request is sent upon visiting room page
-describe('Test the room path', () => {
-  test('should response to GET method', () => {
-    return request(app).get('/rooms/12').then((response) => { 
-      expect(response.statusCode).toBe(200);
-    });
-  });
-});
+// describe('Test the room path', () => {
+//   test('should response to GET method', () => {
+//     return request(app).get('/rooms/12').then((response) => { 
+//       expect(response.statusCode).toBe(200);
+//     });
+//   });
+// });
 
 describe('Test fetching room pics', () => {
   test('should have the same unique exterior object', () => {
