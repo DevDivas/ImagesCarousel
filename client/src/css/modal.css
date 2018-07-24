@@ -7,6 +7,7 @@
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.7);
+  overflow: auto;
 }
 
 .modal-content {
@@ -27,8 +28,22 @@
   cursor: pointer;
 }
 
+.prevBtn {
+  color: #fff;
+  font-size: 17vw;
+  float: left;
+  margin: 15% 1%;
+}
+
+.nextBtn {
+  color: #fff;
+  font-size: 17vw;
+  float: right;
+  margin: 15% 1%;
+}
+
 .focusImage {
-  /* margin: 20% auto; */
-  height: 40%;
+  height: 100%;
   width: 100%;
+  display: inline-block;
 }
