@@ -3,6 +3,7 @@ jobs:
   build:
     docker:
       - image: cicleci/node:8.11.3
+    working_directory: ~/Dev/ImagesCarousel
     steps:
       - checkout
       - run: npm install
