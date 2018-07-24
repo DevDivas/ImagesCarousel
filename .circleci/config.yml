@@ -2,8 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: cicleci/node:8.11.3
-    working_directory: ~/DevDivas/ImagesCarousel
+      - image: circleci/node:8.11.3
     steps:
       - checkout
       - run: npm install
