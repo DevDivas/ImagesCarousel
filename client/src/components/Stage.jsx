@@ -4,7 +4,7 @@ const React = require('react');
 const Stage = (props) => {
   return (
     <div>
-      <img src={props.staged.url} class="stage" />
+      <img src={props.staged.url} className="stage" />
     </div>
   );
 };

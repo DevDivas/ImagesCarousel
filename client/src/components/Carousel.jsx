@@ -4,13 +4,13 @@ const React = require('react');
 
 const Carousel = (props) => {
   return (
-    <div class="carousel">
-      <ul>
+    <div>
+      <ul className="carousel">
         {
           props.collection.map((pic) => {
             return (
               <span key={'' + pic.id}>
-                <img src={pic.url} class="thumbnail" alt="" />
+                <img src={pic.url} className="thumbnail" alt="" />
               </span>
             );
           })
