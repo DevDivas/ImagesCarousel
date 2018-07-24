@@ -7,7 +7,10 @@ const Modal = (props) => {
   return (
     <div className="modal">
       <span className="closeBtn">&times;</span>
-      <div className="modal-content">THIS IS THE MODAL
+      <div className="modal-content">
+        <span>
+          <img src={props.staged.url} className="focusImage" alt="" />
+        </span>
         <Carousel collection={props.collection} />
       </div>
     </div>

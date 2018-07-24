@@ -33,7 +33,7 @@ class App extends React.Component {
     return (
       <div>
         <Stage staged={this.state.staged}/>
-        <Modal collection={this.state.collection}/>
+        <Modal staged={this.state.staged} collection={this.state.collection}/>
       </div>
     );
   }

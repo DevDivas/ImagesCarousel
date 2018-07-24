@@ -1,18 +1,17 @@
 .modal {
-  /*display: none;*/
+  /* display: none; */
   position: fixed;
   z-index: 1;
   left: 0;
   top: 0;
   height: 100%;
   width: 100%;
-  overflow: auto;
   background-color: rgba(0, 0, 0, 0.7);
 }
 
 .modal-content {
-  background-color: #f4f4f4;
-  margin: 35% auto;
+  background-color: transparent;
+  margin: 5% auto;
   padding: 10px;
   width: 60%;
 }
@@ -22,4 +21,14 @@
   font-size: 70px;
   float: right;
   padding: 16px 28px 8px;
+}
+
+.closeBtn:hover {
+  cursor: pointer;
+}
+
+.focusImage {
+  /* margin: 20% auto; */
+  height: 40%;
+  width: 100%;
 }
