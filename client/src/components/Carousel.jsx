@@ -1,12 +1,18 @@
+require('../css/carousel.css');
+require('../css/thumbnail.css');
 const React = require('react');
 
 const Carousel = (props) => {
   return (
-    <div>
+    <div class="carousel">
       <ul>
         {
           props.collection.map((pic) => {
-            return <span key={''+pic.id}><img src={pic.url} width="100px" height="67px" alt=""/></span>;
+            return (
+              <span key={'' + pic.id}>
+                <img src={pic.url} class="thumbnail" alt="" />
+              </span>
+            );
           })
         }
       </ul>
