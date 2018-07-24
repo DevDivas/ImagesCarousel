@@ -10,9 +10,9 @@ const Modal = (props) => {
       <span className="prevBtn">&#8249;</span>
       <span className="nextBtn">&#8250;</span>
       <div className="modal-content">
-        <span>
+        <div className="focusContain">
           <img src={props.staged.url} className="focusImage" alt="" />
-        </span>
+        </div>
         <Carousel collection={props.collection} />
       </div>
     </div>
