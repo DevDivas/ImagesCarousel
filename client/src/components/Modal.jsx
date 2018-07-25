@@ -5,8 +5,8 @@ const React = require('react');
 
 const Modal = (props) => {
   return (
-    <div className="modal">
-      <span className="closeBtn">&times;</span>
+    <div className={props.showModal ? 'modal-on' : 'modal-off'}>
+      <span className="closeBtn" onClick={() => props.handleCloseClick()}>&times;</span>
       <span className="prevBtn">&#8249;</span>
       <span className="nextBtn">&#8250;</span>
       <div className="modal-content">

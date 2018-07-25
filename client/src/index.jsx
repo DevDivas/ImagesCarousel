@@ -1,6 +1,5 @@
 import Stage from './components/Stage.jsx';
 import Modal from './components/Modal.jsx';
-// import Carousel from './components/Carousel.jsx';
 
 const React = require('react');
 const ReactDOM = require('react-dom');
@@ -13,7 +12,10 @@ class App extends React.Component {
     this.state = {
       staged: {},
       collection: [],
+      showModal: false
     };
+    this.handleStageClick = this.handleStageClick.bind(this);
+    this.handleCloseClick = this.handleCloseClick.bind(this);
   }
 
   componentDidMount() {
@@ -25,15 +27,27 @@ class App extends React.Component {
         });
       })
       .catch((err) => {
-        console.log(err);
+        throw err;
       });
+  }
+
+  handleStageClick() {
+    this.setState({
+      showModal: true
+    });
+  }
+
+  handleCloseClick() {
+    this.setState({
+      showModal: false
+    });
   }
 
   render() {
     return (
       <div>
-        <Stage staged={this.state.staged}/>
-        <Modal staged={this.state.staged} collection={this.state.collection}/>
+        <Stage staged={this.state.staged} handleStageClick={this.handleStageClick} />
+        <Modal staged={this.state.staged} collection={this.state.collection} showModal={this.state.showModal} handleCloseClick={this.handleCloseClick}/>
       </div>
     );
   }

@@ -10,7 +10,7 @@
     "watch": "webpack -d --watch",
     "server": "nodemon server/listen.js",
     "build": "node database/csv_gen.js && node database/index.js",
-    "test": "jest"
+    "test": "jest --forceExit"
   },
   "dependencies": {
     "axios": "^0.18.0",

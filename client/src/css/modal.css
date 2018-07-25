@@ -1,5 +1,17 @@
-.modal {
-  /* display: none; */
+.modal-off {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: auto;
+}
+
+.modal-on {
+  display: block;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -19,10 +31,9 @@
 
 .closeBtn {
   color: #fff;
-  font-size: 70px;
+  font-size: 60px;
   float: right;
-  padding: 16px 28px 8px;
-  z-index: 2;
+  padding: 0px 28px 8px;
   cursor: pointer;
 }
 
@@ -33,6 +44,8 @@
   margin: 15% 1%;
   z-index: 3;
   cursor: pointer;
+  /* position: relative; */
+
 }
 
 .nextBtn {
@@ -42,13 +55,15 @@
   margin: 15% 1%;
   z-index: 3;
   cursor: pointer;
+  position: relative;
+  left: 100px;
 }
 
 .focusContain {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 400px;
+  height: 500px;
   background-repeat: no-repeat;
   background-size: contain;
   border: 1px solid red;
@@ -58,4 +73,5 @@
   max-width: 100%;
   height: 100%;
   /* vertical-align: middle; */
+  position: relative;
 }
