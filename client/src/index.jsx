@@ -15,6 +15,7 @@ class App extends React.Component {
       showModal: false
     };
     this.handleStageClick = this.handleStageClick.bind(this);
+    this.handleCloseClick = this.handleCloseClick.bind(this);
   }
 
   componentDidMount() {
@@ -33,14 +34,20 @@ class App extends React.Component {
   handleStageClick() {
     this.setState({
       showModal: true
-    })
+    });
+  }
+
+  handleCloseClick() {
+    this.setState({
+      showModal: false
+    });
   }
 
   render() {
     return (
       <div>
         <Stage staged={this.state.staged} handleStageClick={this.handleStageClick} />
-        <Modal staged={this.state.staged} collection={this.state.collection} showModal={this.state.showModal} />
+        <Modal staged={this.state.staged} collection={this.state.collection} showModal={this.state.showModal} handleCloseClick={this.handleCloseClick}/>
       </div>
     );
   }
