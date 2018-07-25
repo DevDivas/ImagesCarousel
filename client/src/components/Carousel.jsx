@@ -4,7 +4,7 @@ const React = require('react');
 
 const Carousel = (props) => {
   return (
-    <div>
+    <div className="carouselFrame">
       <ul className="carousel">
         {
           props.collection.map((pic) => {

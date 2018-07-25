@@ -7,9 +7,9 @@ const Modal = (props) => {
   return (
     <div className={props.showModal ? 'modal-on' : 'modal-off'}>
       <span className="closeBtn" onClick={() => props.handleCloseClick()}>&times;</span>
+      <div className="modal-content">
       <span className="prevBtn">&#8249;</span>
       <span className="nextBtn">&#8250;</span>
-      <div className="modal-content">
         <div className="focusContain">
           <img src={props.staged.url} className="focusImage" alt="" />
         </div>
