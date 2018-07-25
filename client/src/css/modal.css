@@ -31,10 +31,9 @@
 
 .closeBtn {
   color: #fff;
-  font-size: 70px;
+  font-size: 60px;
   float: right;
-  padding: 16px 28px 8px;
-  z-index: 2;
+  padding: 0px 28px 8px;
   cursor: pointer;
 }
 
@@ -45,6 +44,8 @@
   margin: 15% 1%;
   z-index: 3;
   cursor: pointer;
+  /* position: relative; */
+
 }
 
 .nextBtn {
@@ -54,6 +55,8 @@
   margin: 15% 1%;
   z-index: 3;
   cursor: pointer;
+  position: relative;
+  left: 100px;
 }
 
 .focusContain {
@@ -70,4 +73,5 @@
   max-width: 100%;
   height: 100%;
   /* vertical-align: middle; */
+  position: relative;
 }
