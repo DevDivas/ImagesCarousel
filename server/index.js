@@ -20,7 +20,8 @@ app.get('/rooms/:roomId', (req, res) => {
 
   db.fetchRoomPics(roomId, (err, data) => {
     if (err) {
-      throw err;
+      res.status(500).send();
+      return;
     }
     res.status(200).send(data);
   });
