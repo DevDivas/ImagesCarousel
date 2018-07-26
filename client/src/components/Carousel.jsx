@@ -4,13 +4,16 @@ const React = require('react');
 
 const Carousel = (props) => {
   return (
-    <div>
+    <div className="carouselFrame">
       <ul className="carousel">
         {
           props.collection.map((pic) => {
             return (
-              <span key={'' + pic.id}>
-                <img src={pic.url} className="thumbnail" alt="" />
+              <span key={'' + pic.id} onClick={(e) => props.handleThumbnailClick(e)}>
+                {pic.url === props.focusImage.url ? 
+                  <img src={pic.url} className="thumbnail-selected" alt="" /> :
+                  <img src={pic.url} className="thumbnail" alt="" />
+                }
               </span>
             );
           })

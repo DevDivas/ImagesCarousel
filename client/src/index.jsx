@@ -12,10 +12,12 @@ class App extends React.Component {
     this.state = {
       staged: {},
       collection: [],
-      showModal: false
+      showModal: false,
+      focusImage: {}
     };
     this.handleStageClick = this.handleStageClick.bind(this);
     this.handleCloseClick = this.handleCloseClick.bind(this);
+    this.handleThumbnailClick = this.handleThumbnailClick.bind(this);
   }
 
   componentDidMount() {
@@ -24,6 +26,7 @@ class App extends React.Component {
         this.setState({
           staged: res.data[0],
           collection: res.data,
+          focusImage: res.data[0]
         });
       })
       .catch((err) => {
@@ -43,11 +46,23 @@ class App extends React.Component {
     });
   }
 
+  handleThumbnailClick(e) {
+    let imgSrc = e.target.getAttribute('src');
+    const copyColl = this.state.collection.slice(0);
+    for (let i = 0; i < copyColl.length; i++) {
+      if (copyColl[i].url === imgSrc) {
+        this.setState({
+          focusImage: copyColl[i]
+        });
+      }
+    }
+  }
+
   render() {
     return (
       <div>
         <Stage staged={this.state.staged} handleStageClick={this.handleStageClick} />
-        <Modal staged={this.state.staged} collection={this.state.collection} showModal={this.state.showModal} handleCloseClick={this.handleCloseClick}/>
+        <Modal focusImage={this.state.focusImage} collection={this.state.collection} showModal={this.state.showModal} handleCloseClick={this.handleCloseClick} handleThumbnailClick={this.handleThumbnailClick} />
       </div>
     );
   }
