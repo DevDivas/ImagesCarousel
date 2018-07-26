@@ -13,7 +13,7 @@ const Modal = (props) => {
         <div className="focusContain">
           <img src={props.focusImage.url} className="focusImage" alt="" />
         </div>
-        <Carousel handleThumbnailClick={props.handleThumbnailClick} collection={props.collection} />
+        <Carousel handleThumbnailClick={props.handleThumbnailClick} collection={props.collection} focusImage={props.focusImage} />
       </div>
     </div>
   );

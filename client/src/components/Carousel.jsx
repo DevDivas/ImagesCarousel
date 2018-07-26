@@ -10,7 +10,10 @@ const Carousel = (props) => {
           props.collection.map((pic) => {
             return (
               <span key={'' + pic.id} onClick={(e) => props.handleThumbnailClick(e)}>
-                <img src={pic.url} className="thumbnail" alt="" />
+                {pic.url === props.focusImage.url ? 
+                  <img src={pic.url} className="thumbnail-selected" alt="" /> :
+                  <img src={pic.url} className="thumbnail" alt="" />
+                }
               </span>
             );
           })
