@@ -1,4 +1,9 @@
 .thumbnail {
   width: 100px;
   height: 67px;
+  margin: 0 5px;
+}
+
+.thumbnail:hover {
+  cursor: pointer;
 }

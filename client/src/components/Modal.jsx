@@ -11,9 +11,9 @@ const Modal = (props) => {
       <span className="prevBtn">&#8249;</span>
       <span className="nextBtn">&#8250;</span>
         <div className="focusContain">
-          <img src={props.staged.url} className="focusImage" alt="" />
+          <img src={props.focusImage.url} className="focusImage" alt="" />
         </div>
-        <Carousel collection={props.collection} />
+        <Carousel handleThumbnailClick={props.handleThumbnailClick} collection={props.collection} />
       </div>
     </div>
   );
