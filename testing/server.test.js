@@ -21,7 +21,7 @@ describe('Test fetching room pics', () => {
         console.log('error during testing');
         return;
       }
-      const expected = {"id":69,"url":"https://s3-us-west-1.amazonaws.com/homesnap/exterior/h12.jpg","home_id":12,"order":1,"caption":"''"};
+      const expected = {'id':69, 'url':'https://s3-us-west-1.amazonaws.com/homesnap/exterior/h12.jpg', 'home_id':12, 'order':1, 'caption':"''"};
       expect(JSON.stringify(docs[0])).toEqual(JSON.stringify(expected));
     });
   });

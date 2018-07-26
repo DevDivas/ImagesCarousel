@@ -1,26 +1,33 @@
+import PropTypes from 'prop-types';
+
 require('../css/carousel.css');
 require('../css/thumbnail.css');
 const React = require('react');
 
-const Carousel = (props) => {
-  return (
-    <div className="carouselFrame">
-      <ul className="carousel">
-        {
-          props.collection.map((pic) => {
-            return (
-              <span key={'' + pic.id} onClick={(e) => props.handleThumbnailClick(e)}>
-                {pic.url === props.focusImage.url ? 
-                  <img src={pic.url} className="thumbnail-selected" alt="" /> :
-                  <img src={pic.url} className="thumbnail" alt="" />
-                }
-              </span>
-            );
-          })
-        }
-      </ul>
-    </div>
-  );
+const Carousel = ({ appState, handleThumbnailClick }) => (
+  <div className="carouselFrame">
+    <ul className="carousel">
+      {
+        appState.collection.map((pic) => {
+          const id = Number(pic.id);
+          return (
+            <span key={id} onClick={e => handleThumbnailClick(e)} onKeyPress={() => ''} role="presentation">
+              {
+                pic.url === appState.focusImage.url
+                  ? <img src={pic.url} className="thumbnail-selected" alt="" />
+                  : <img src={pic.url} className="thumbnail" alt="" />
+              }
+            </span>
+          );
+        })
+      }
+    </ul>
+  </div>
+);
+
+Carousel.propTypes = {
+  appState: PropTypes.object.isRequired,
+  handleThumbnailClick: PropTypes.func.isRequired,
 };
 
 export default Carousel;
