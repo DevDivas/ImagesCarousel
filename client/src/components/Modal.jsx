@@ -6,14 +6,14 @@ const React = require('react');
 
 const Modal = ({ appState, handleCloseClick, handleThumbnailClick, handlePrevBtnClick, handleNextBtnClick }) => (
   <div className={appState.showModal ? 'modal-on' : 'modal-off'}>
-    <span className="closeBtn" onClick={() => handleCloseClick()} onKeyPress={() => ''} role="presentation">
+    <span className="closeBtn" onClick={handleCloseClick} onKeyPress={() => ''} role="presentation">
       &times;
     </span>
     <div className="modal-content">
-      <span className="prevBtn" onClick={() => handlePrevBtnClick()} onKeyPress={() => ''} role="presentation">
+      <span className="prevBtn" onClick={handlePrevBtnClick} onKeyPress={() => ''} role="presentation">
         &#8249;
       </span>
-      <span className="nextBtn" onClick={() => handleNextBtnClick()} onKeyPress={() => ''} role="presentation">
+      <span className="nextBtn" onClick={handleNextBtnClick} onKeyPress={() => ''} role="presentation">
         &#8250;
       </span>
       <div className="focusContain">
