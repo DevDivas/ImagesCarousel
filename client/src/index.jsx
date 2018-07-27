@@ -5,7 +5,6 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const axios = require('axios');
 
-
 class App extends React.Component {
   constructor() {
     super();
@@ -13,7 +12,7 @@ class App extends React.Component {
       staged: {},
       collection: [],
       showModal: false,
-      focusImage: {}
+      focusImage: {},
     };
     this.handleStageClick = this.handleStageClick.bind(this);
     this.handleCloseClick = this.handleCloseClick.bind(this);
@@ -21,12 +20,12 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/rooms/12')
+    axios.get('/rooms/81')
       .then((res) => {
         this.setState({
           staged: res.data[0],
           collection: res.data,
-          focusImage: res.data[0]
+          focusImage: res.data[0],
         });
       })
       .catch((err) => {
@@ -36,33 +35,36 @@ class App extends React.Component {
 
   handleStageClick() {
     this.setState({
-      showModal: true
+      showModal: true,
     });
   }
 
   handleCloseClick() {
     this.setState({
-      showModal: false
+      showModal: false,
     });
   }
 
   handleThumbnailClick(e) {
-    let imgSrc = e.target.getAttribute('src');
-    const copyColl = this.state.collection.slice(0);
-    for (let i = 0; i < copyColl.length; i++) {
+    const imgSrc = e.target.getAttribute('src');
+    const { collection } = this.state;
+    const copyColl = collection.slice(0);
+    for (let i = 0; i < copyColl.length; i += 1) {
       if (copyColl[i].url === imgSrc) {
         this.setState({
-          focusImage: copyColl[i]
+          focusImage: copyColl[i],
         });
       }
     }
   }
 
   render() {
+    const { staged } = this.state;
+
     return (
       <div>
-        <Stage staged={this.state.staged} handleStageClick={this.handleStageClick} />
-        <Modal focusImage={this.state.focusImage} collection={this.state.collection} showModal={this.state.showModal} handleCloseClick={this.handleCloseClick} handleThumbnailClick={this.handleThumbnailClick} />
+        <Stage staged={staged} handleStageClick={this.handleStageClick} />
+        <Modal appState={this.state} handleCloseClick={this.handleCloseClick} handleThumbnailClick={this.handleThumbnailClick} />
       </div>
     );
   }
