@@ -15,8 +15,6 @@ input {
   height: auto;
   margin: 0;
   padding: 8px 16px;
-  position: fixed;
-  z-index: 1;
   border-width: 1px;
   border-style: solid;
   border-color: transparent;
@@ -32,16 +30,19 @@ input {
 }
 
 .viewPhotosBtn {
+  position: absolute;
   bottom: 250px;
   left: 20px;
 }
 
 .shareBtn {
+  position: absolute;
   bottom: 540px;
-  left: 1090px;
+  left: 85.5vw;
 }
 
 .saveBtn {
+  position: absolute;
   bottom: 540px;
-  left: 1180px;
+  left: 92.5vw;
 }
