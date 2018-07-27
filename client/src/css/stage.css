@@ -1,9 +1,7 @@
 .stage {
   width: 100%;
   height: 368px;
-  background-size: cover;
   cursor: pointer;
-  border: 1px solid red;
   overflow: hidden;
 }
 
@@ -12,23 +10,39 @@
   min-height: 368px;
 }
 
-.viewPhotosBtn {
+input {
   width: auto;
   height: auto;
   margin: 0;
   padding: 8px 16px;
-  position: relative;
-  bottom: 55px;
-  left: 20px;
   border-width: 1px;
   border-style: solid;
   border-color: transparent;
   border-radius: 4px;
   background: #ffffff;
-  font-weight: 600;
+  font-weight: 450;
   font-size: 14px;
   text-align: center;
   line-height: 18px;
   letter-spacing: normal;
   color: #484848;
+  cursor: pointer;
+}
+
+.viewPhotosBtn {
+  position: absolute;
+  bottom: 250px;
+  left: 20px;
+}
+
+.shareBtn {
+  position: absolute;
+  bottom: 540px;
+  left: 85.5vw;
+}
+
+.saveBtn {
+  position: absolute;
+  bottom: 540px;
+  left: 92.5vw;
 }
