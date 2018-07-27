@@ -17,6 +17,7 @@ class App extends React.Component {
     this.handleStageClick = this.handleStageClick.bind(this);
     this.handleCloseClick = this.handleCloseClick.bind(this);
     this.handleThumbnailClick = this.handleThumbnailClick.bind(this);
+    this.handlePrevBtnClick = this.handlePrevBtnClick.bind(this);
     this.handleNextBtnClick = this.handleNextBtnClick.bind(this);
   }
 
@@ -58,6 +59,24 @@ class App extends React.Component {
     }
   }
 
+  handlePrevBtnClick() {
+    const { collection, focusImage } = this.state;
+    if (focusImage.order === 1) {
+      this.setState({
+        focusImage: collection[collection.length - 1],
+      });
+    } else {
+      const prevOrder = focusImage.order - 1;
+      for (let i = 0; i < collection.length; i += 1) {
+        if (collection[i].order === prevOrder) {
+          this.setState({
+            focusImage: collection[i],
+          });
+        }
+      }
+    }
+  }
+
   handleNextBtnClick() {
     const { collection, focusImage } = this.state;
     if (focusImage.order === collection.length) {
@@ -82,7 +101,7 @@ class App extends React.Component {
     return (
       <div>
         <Stage staged={staged} handleStageClick={this.handleStageClick} />
-        <Modal appState={this.state} handleCloseClick={this.handleCloseClick} handleThumbnailClick={this.handleThumbnailClick} handleNextBtnClick={this.handleNextBtnClick} />
+        <Modal appState={this.state} handleCloseClick={this.handleCloseClick} handleThumbnailClick={this.handleThumbnailClick} handlePrevBtnClick={this.handlePrevBtnClick} handleNextBtnClick={this.handleNextBtnClick} />
       </div>
     );
   }
