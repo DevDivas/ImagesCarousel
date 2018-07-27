@@ -6,7 +6,7 @@ const React = require('react');
 const Stage = ({ staged, handleStageClick }) => (
   <div className="stage" onClick={handleStageClick} onKeyPress={() => ''} role="presentation">
     <img src={staged.url} className="stage-img" alt="" />
-    <input type="submit" className="viewPhotosBtn" value="View Photos" />
+    <input type="submit" className="viewPhotosBtn" value="View Photos" onClick={handleStageClick} />
     <input type="submit" className="shareBtn" value="Share" />
     <input type="submit" className="saveBtn" value="Save" />
   </div>
