@@ -4,7 +4,7 @@ import Carousel from './Carousel.jsx';
 require('../css/modal.css');
 const React = require('react');
 
-const Modal = ({ appState, handleCloseClick, handleThumbnailClick }) => (
+const Modal = ({ appState, handleCloseClick, handleThumbnailClick, handleNextBtnClick }) => (
   <div className={appState.showModal ? 'modal-on' : 'modal-off'}>
     <span className="closeBtn" onClick={() => handleCloseClick()} onKeyPress={() => ''} role="presentation">
       &times;
@@ -13,7 +13,7 @@ const Modal = ({ appState, handleCloseClick, handleThumbnailClick }) => (
       <span className="prevBtn">
         &#8249;
       </span>
-      <span className="nextBtn">
+      <span className="nextBtn" onClick={() => handleNextBtnClick()} onKeyPress={() => ''} role="presentation">
         &#8250;
       </span>
       <div className="focusContain">
@@ -28,6 +28,7 @@ Modal.propTypes = {
   appState: PropTypes.object.isRequired,
   handleCloseClick: PropTypes.func.isRequired,
   handleThumbnailClick: PropTypes.func.isRequired,
+  handleNextBtnClick: PropTypes.func.isRequired,
 };
 
 export default Modal;
