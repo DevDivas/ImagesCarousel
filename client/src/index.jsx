@@ -17,6 +17,8 @@ class App extends React.Component {
     this.handleStageClick = this.handleStageClick.bind(this);
     this.handleCloseClick = this.handleCloseClick.bind(this);
     this.handleThumbnailClick = this.handleThumbnailClick.bind(this);
+    this.handlePrevBtnClick = this.handlePrevBtnClick.bind(this);
+    this.handleNextBtnClick = this.handleNextBtnClick.bind(this);
   }
 
   componentDidMount() {
@@ -48,12 +50,47 @@ class App extends React.Component {
   handleThumbnailClick(e) {
     const imgSrc = e.target.getAttribute('src');
     const { collection } = this.state;
-    const copyColl = collection.slice(0);
-    for (let i = 0; i < copyColl.length; i += 1) {
-      if (copyColl[i].url === imgSrc) {
+    for (let i = 0; i < collection.length; i += 1) {
+      if (collection[i].url === imgSrc) {
         this.setState({
-          focusImage: copyColl[i],
+          focusImage: collection[i],
         });
+      }
+    }
+  }
+
+  handlePrevBtnClick() {
+    const { collection, focusImage } = this.state;
+    if (focusImage.order === 1) {
+      this.setState({
+        focusImage: collection[collection.length - 1],
+      });
+    } else {
+      const prevOrder = focusImage.order - 1;
+      for (let i = 0; i < collection.length; i += 1) {
+        if (collection[i].order === prevOrder) {
+          this.setState({
+            focusImage: collection[i],
+          });
+        }
+      }
+    }
+  }
+
+  handleNextBtnClick() {
+    const { collection, focusImage } = this.state;
+    if (focusImage.order === collection.length) {
+      this.setState({
+        focusImage: collection[0],
+      });
+    } else {
+      const nextOrder = focusImage.order + 1;
+      for (let i = 0; i < collection.length; i += 1) {
+        if (collection[i].order === nextOrder) {
+          this.setState({
+            focusImage: collection[i],
+          });
+        }
       }
     }
   }
@@ -64,7 +101,7 @@ class App extends React.Component {
     return (
       <div>
         <Stage staged={staged} handleStageClick={this.handleStageClick} />
-        <Modal appState={this.state} handleCloseClick={this.handleCloseClick} handleThumbnailClick={this.handleThumbnailClick} />
+        <Modal appState={this.state} handleCloseClick={this.handleCloseClick} handleThumbnailClick={this.handleThumbnailClick} handlePrevBtnClick={this.handlePrevBtnClick} handleNextBtnClick={this.handleNextBtnClick} />
       </div>
     );
   }
