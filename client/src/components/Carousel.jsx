@@ -15,7 +15,9 @@ const Carousel = ({ appState, handleThumbnailClick }) => (
         {appState.focusImage.caption}
       </span>
       <div>
-        <span className="carousel-toggle">Hide photo list</span>
+        <span className="carousel-toggle">
+          Hide photo list
+        </span>
       </div>
     </div>
     <ul className="carousel">

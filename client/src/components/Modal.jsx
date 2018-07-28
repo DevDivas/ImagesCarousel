@@ -4,7 +4,15 @@ import Carousel from './Carousel.jsx';
 require('../css/modal.css');
 const React = require('react');
 
-const Modal = ({ appState, handleCloseClick, handleThumbnailClick, handlePrevBtnClick, handleNextBtnClick }) => (
+const Modal = (
+  {
+    appState,
+    handleCloseClick,
+    handleThumbnailClick,
+    handlePrevBtnClick,
+    handleNextBtnClick,
+  },
+) => (
   <div className={appState.showModal ? 'modal-on' : 'modal-off'}>
     <span className="closeBtn" onClick={handleCloseClick} onKeyPress={() => ''} role="presentation">
       &times;
