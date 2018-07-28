@@ -4,6 +4,15 @@
   width: 60%;
 }
 
+.deckInfo {
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.43;
+  color: rgb(255, 255, 255);
+  font-weight: 200;
+  border: 1px solid white;
+}
+
 .carousel {
   height: 67px;
   border: 1px solid black;

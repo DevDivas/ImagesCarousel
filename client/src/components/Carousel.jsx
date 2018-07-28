@@ -6,6 +6,7 @@ const React = require('react');
 
 const Carousel = ({ appState, handleThumbnailClick }) => (
   <div className="carouselFrame">
+    <div className="deckInfo">{appState.focusImage.order}/{appState.collection.length}: {appState.focusImage.caption}</div>
     <ul className="carousel">
       {
         appState.collection.map((pic) => {
