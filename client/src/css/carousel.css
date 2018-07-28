@@ -4,12 +4,22 @@
   width: 60%;
 }
 
-.deckInfo {
+.imgInfo {
   font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 1.43;
   color: rgb(255, 255, 255);
   font-weight: 200;
+  float: left;
+}
+
+.carousel-toggle {
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.43;
+  color: rgb(255, 255, 255);
+  font-weight: 200;
+  float: right;
 }
 
 .carousel {
