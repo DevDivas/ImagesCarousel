@@ -13,12 +13,14 @@ class App extends React.Component {
       collection: [],
       showModal: false,
       focusImage: {},
+      showCarousel: true,
     };
     this.handleStageClick = this.handleStageClick.bind(this);
     this.handleCloseClick = this.handleCloseClick.bind(this);
     this.handleThumbnailClick = this.handleThumbnailClick.bind(this);
     this.handlePrevBtnClick = this.handlePrevBtnClick.bind(this);
     this.handleNextBtnClick = this.handleNextBtnClick.bind(this);
+    this.handleCarouselToggle = this.handleCarouselToggle.bind(this);
   }
 
   componentDidMount() {
@@ -94,6 +96,19 @@ class App extends React.Component {
       }
     }
   }
+  
+  handleCarouselToggle() {
+    const { showCarousel } = this.state;
+    if (showCarousel) {
+      this.setState({
+        showCarousel: false,
+      });
+    } else {
+      this.setState({
+        showCarousel: true,
+      });
+    }
+  }
 
   render() {
     const { staged } = this.state;
@@ -101,7 +116,7 @@ class App extends React.Component {
     return (
       <div>
         <Stage staged={staged} handleStageClick={this.handleStageClick} />
-        <Modal appState={this.state} handleCloseClick={this.handleCloseClick} handleThumbnailClick={this.handleThumbnailClick} handlePrevBtnClick={this.handlePrevBtnClick} handleNextBtnClick={this.handleNextBtnClick} />
+        <Modal appState={this.state} handleCloseClick={this.handleCloseClick} handleThumbnailClick={this.handleThumbnailClick} handlePrevBtnClick={this.handlePrevBtnClick} handleNextBtnClick={this.handleNextBtnClick} handleCarouselToggle={this.handleCarouselToggle} />
       </div>
     );
   }

@@ -4,7 +4,7 @@ require('../css/carousel.css');
 require('../css/thumbnail.css');
 const React = require('react');
 
-const Carousel = ({ appState, handleThumbnailClick }) => (
+const Carousel = ({ appState, handleThumbnailClick, handleCarouselToggle }) => (
   <div className="carouselFrame">
     <div>
       <span className="imgInfo">
@@ -15,8 +15,10 @@ const Carousel = ({ appState, handleThumbnailClick }) => (
         {appState.focusImage.caption}
       </span>
       <div>
-        <span className="carousel-toggle">
-          Hide photo list
+        <span className="carousel-toggle" onClick={handleCarouselToggle} onKeyPress={() => ''} role="presentation">
+          {
+            appState.showCarousel ? 'Hide photo list' : 'Show photo list'
+          }
         </span>
       </div>
     </div>
@@ -42,6 +44,7 @@ const Carousel = ({ appState, handleThumbnailClick }) => (
 Carousel.propTypes = {
   appState: PropTypes.object.isRequired,
   handleThumbnailClick: PropTypes.func.isRequired,
+  handleCarouselToggle: PropTypes.func.isRequired,
 };
 
 export default Carousel;
