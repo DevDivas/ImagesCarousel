@@ -99,15 +99,9 @@ class App extends React.Component {
   
   handleCarouselToggle() {
     const { showCarousel } = this.state;
-    if (showCarousel) {
-      this.setState({
-        showCarousel: false,
-      });
-    } else {
-      this.setState({
-        showCarousel: true,
-      });
-    }
+    this.setState({
+      showCarousel: !showCarousel,
+    });
   }
 
   render() {
