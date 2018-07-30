@@ -4,13 +4,20 @@
   width: 60%;
 }
 
-.infoPanel-on {
+.infoPanel-top {
+  border: 1px solid red;
   position: relative;
+  bottom: 9px;
+  width: 100%;
+  height: 14px;
 }
 
-.infoPanel-off {
+.infoPanel-bottom {
+  border: 1px solid red;
   position: relative;
   top: 50px;
+  width: 100%;
+  height: 14px;
 }
 
 .imgInfo {
@@ -33,13 +40,22 @@
 }
 
 .carousel {
+  /* border: 1px solid red;
   height: 67px;
-  /* border: 1px solid red; */
+  width: 100%;
   display: block;
-  /* display: none; */
   margin-left: auto;
   margin-right: auto;
+  margin-top: 0;
   position: static;
   overflow: hidden;
-  white-space: nowrap;
+  white-space: nowrap; */
+
+  border: 1px solid red;
+  position: relative;
+  bottom: 9px;
+  /* width: 100%; */
+  height: 67px;
+  padding: 0;
+  overflow: hidden;
 }
