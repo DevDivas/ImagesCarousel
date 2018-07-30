@@ -16,7 +16,7 @@ const Modal = (
 ) => (
   <div className={appState.showModal ? 'modal-on' : 'modal-off'}>
     <span className="closeBtn" onClick={handleCloseClick} onKeyPress={() => ''} role="presentation">
-      &times;
+      &#9587;
     </span>
     <div className="modal-content">
       <span className="prevBtn" onClick={handlePrevBtnClick} onKeyPress={() => ''} role="presentation">
