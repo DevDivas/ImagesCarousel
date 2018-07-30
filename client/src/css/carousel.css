@@ -41,12 +41,17 @@
   float: right;
 }
 
+.carousel-wrapper {
+  border: 1px dashed white;
+  height: 67px;
+}
+
 .carousel {
   position: relative;
   bottom: 18px;
   height: 67px;
   padding: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   white-space: nowrap;
   border: 1px solid red;
 }

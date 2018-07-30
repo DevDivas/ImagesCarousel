@@ -98,7 +98,7 @@ class App extends React.Component {
       }
     }
   }
-  
+
   handleCarouselToggle() {
     const { showCarousel } = this.state;
     this.setState({
