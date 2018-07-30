@@ -26,8 +26,7 @@ class App extends React.Component {
 
   componentDidMount() {
     const { roomId } = this.state;
-    const endPoint = '/rooms/'.concat(roomId).concat('/pics');
-    axios.get(endPoint)
+    axios.get(`/rooms/${roomId}/pics`)
       .then((res) => {
         this.setState({
           staged: res.data[0],
