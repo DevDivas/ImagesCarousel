@@ -22,22 +22,28 @@ const Carousel = ({ appState, handleThumbnailClick, handleCarouselToggle }) => (
         </span>
       </div>
     </div>
-    <ul className="carousel">
-      {
-        appState.collection.map((pic) => {
-          const id = Number(pic.id);
-          return (
-            <span key={id} onClick={e => handleThumbnailClick(e)} onKeyPress={() => ''} role="presentation">
-              {
-                pic.url === appState.focusImage.url
-                  ? <img src={pic.url} className="thumbnail-selected" alt="" />
-                  : <img src={pic.url} className="thumbnail" alt="" />
-              }
-            </span>
-          );
-        })
-      }
-    </ul>
+    {
+      appState.showCarousel
+        ? (
+          <ul className="carousel">
+            {
+              appState.collection.map((pic) => {
+                const id = Number(pic.id);
+                return (
+                  <span key={id} onClick={e => handleThumbnailClick(e)} onKeyPress={() => ''} role="presentation">
+                    {
+                      pic.url === appState.focusImage.url
+                        ? <img src={pic.url} className="thumbnail-selected" alt="" />
+                        : <img src={pic.url} className="thumbnail" alt="" />
+                    }
+                  </span>
+                );
+              })
+            }
+          </ul>
+        )
+        : <span />
+    }
   </div>
 );
 
