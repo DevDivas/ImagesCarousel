@@ -4,6 +4,15 @@
   width: 60%;
 }
 
+.infoPanel-on {
+  position: relative;
+}
+
+.infoPanel-off {
+  position: relative;
+  top: 50px;
+}
+
 .imgInfo {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 14px;
