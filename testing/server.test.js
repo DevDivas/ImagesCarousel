@@ -5,7 +5,7 @@ const db = require('../database/index.js');
 // Check to see if a GET request is sent upon visiting room page
 describe('Test the room path', () => {
   test('should response to GET method', () => {
-    return request(app).get('/rooms/12').then((response) => { 
+    return request(app).get('/rooms/12/pics').then((response) => { 
       expect(response.statusCode).toBe(200);
     }).catch((err) => {
       return done(err);
