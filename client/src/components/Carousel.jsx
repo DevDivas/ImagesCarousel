@@ -6,7 +6,7 @@ const React = require('react');
 
 const Carousel = ({ appState, handleThumbnailClick, handleCarouselToggle }) => (
   <div className="carouselFrame">
-    <div className={appState.showCarousel ? 'infoPanel-top' : 'infoPanel-bottom'}>
+    <div className={appState.showCarousel ? 'infoPanel-top' : 'infoPanel-bottom'} onMouseEnter={appState.showCarousel ? '' : handleCarouselToggle}>
       <span className="imgInfo">
         {appState.focusImage.order}
         /
