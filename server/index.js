@@ -12,10 +12,10 @@ app.use((req, res, next) => {
 });
 
 // Serve static assets
-app.use(express.static(path.join(__dirname, '../public')));
+app.use('/rooms/:roomId', express.static(path.join(__dirname, '../public')));
 
 // handle visit to specific room page
-app.get('/rooms/:roomId', (req, res) => {
+app.get('/rooms/:roomId/pics', (req, res) => {
   const roomId = Number(req.params.roomId);
 
   db.fetchRoomPics(roomId, (err, data) => {

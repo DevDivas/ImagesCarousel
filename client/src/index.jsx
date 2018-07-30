@@ -9,6 +9,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      roomId: /\d+/g.exec(window.location.pathname)[0],
       staged: {},
       collection: [],
       showModal: false,
@@ -24,7 +25,9 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/rooms/81')
+    const { roomId } = this.state;
+    const endPoint = '/rooms/'.concat(roomId).concat('/pics');
+    axios.get(endPoint)
       .then((res) => {
         this.setState({
           staged: res.data[0],
