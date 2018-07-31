@@ -1,7 +1,7 @@
 import { shallow, mount, render } from 'enzyme';
 import React from 'react';
 
-// import App from '../client/src/index.jsx';
+// import App from '../client/src/components/App.jsx';
 import Stage from '../client/src/components/Stage.jsx';
 import Modal from '../client/src/components/Modal.jsx';
 import Carousel from '../client/src/components/Carousel.jsx';
@@ -56,7 +56,7 @@ describe('<Modal />', () => {
     handleCloseClick: () => {},
     handleThumbnailClick: () => {},
     handlePrevBtnClick: () => {},
-    handleNextClick: () => {},
+    handleNextBtnClick: () => {},
     handleCarouselToggle: () => {},
   };
   const wrapper = shallow(<Modal {...props} />);
