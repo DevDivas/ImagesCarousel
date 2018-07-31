@@ -39,7 +39,7 @@ fs.readFile(path.join(__dirname, '/data.csv'), 'utf8', (err, data) => {
   // insert documents into collection
   Asset.insertMany(objAssets, (error) => {
     if (error) {
-      console.log('InsertMany error: ', error);
+      console.log('InsertMany error');
       return;
     }
     console.log('InsertMany success');
