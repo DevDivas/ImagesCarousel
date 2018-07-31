@@ -5,15 +5,57 @@ require('../css/thumbnail.css');
 const React = require('react');
 
 class Carousel extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      move: 'translate(0px, 0px)',
+    };
+  }
+
   componentDidUpdate(prevProps) {
     const { appState } = this.props;
     const { focusImage, collection } = appState;
-    const { order } = focusImage;
-    console.log(order);
-
-    // if (collection.length > 7) {
-      
-    // }
+    const { url, order } = focusImage;
+    // console.log(prevProps.appState.focusImage);
+    if (url !== prevProps.appState.focusImage.url) {
+      if (collection.length > 7) {
+        console.log('order', order);
+        console.log('collection length', collection.length);
+        if (order < 4) {
+          this.setState({
+            move: 'translate(0px)',
+          });
+        } else if (order === 4) {
+          this.setState({
+            move: 'translate(-55px)',
+          });
+        } else if (order > 4 && order < collection.length - 4) {
+          this.setState({
+            move: `translate(-${(order - 4) * 110 + 55}px)`,
+          });
+        } else if (order === collection.length - 4) {
+          this.setState({
+            move: `translate(-${(order - 4) * 110}px)`,
+          });
+        } else if (order === collection.length - 3) {
+          this.setState({
+            move: `translate(-${(order - 5) * 110}px)`,
+          });
+        } else if (order === collection.length - 2) {
+          this.setState({
+            move: `translate(-${(order - 6) * 110}px)`,
+          });
+        } else if (order === collection.length - 1) {
+          this.setState({
+            move: `translate(-${(order - 7) * 110}px)`,
+          });
+        } else if (order === collection.length) {
+          this.setState({
+            move: `translate(-${(order - 8) * 110}px)`,
+          });
+        }
+      }
+    }
   }
 
   render() {
@@ -41,7 +83,7 @@ class Carousel extends React.Component {
           {
             appState.showCarousel
               ? (
-                <ul className="carousel" style={{ transform: 'translate(-210px, 0px)' }}>
+                <ul className="carousel" style={{ transform: this.state.move }}>
                   {
                     appState.collection.map((pic) => {
                       const id = Number(pic.id);

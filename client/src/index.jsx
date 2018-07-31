@@ -13,7 +13,7 @@ class App extends React.Component {
       staged: {},
       collection: [],
       showModal: false,
-      focusImage: {},
+      focusImage: {'id': 0, 'url':'', 'home_id':0, 'order':0, 'caption':"''"},
       showCarousel: true,
     };
     this.handleStageClick = this.handleStageClick.bind(this);
