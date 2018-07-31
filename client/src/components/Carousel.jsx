@@ -16,13 +16,9 @@ class Carousel extends React.Component {
     const { appState } = this.props;
     const { focusImage, collection } = appState;
     const { url, order } = focusImage;
-    // console.log(prevProps.appState.focusImage);
-    
+
     if (url !== prevProps.appState.focusImage.url) {
-      debugger;
       if (collection.length > 7) {
-        console.log('order', order);
-        console.log('collection length', collection.length);
         if (order < 4) {
           this.setState({
             move: 'translate(0px)',
