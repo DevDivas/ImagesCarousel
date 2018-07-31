@@ -16,38 +16,29 @@ class Carousel extends React.Component {
     const { appState } = this.props;
     const { focusImage, collection } = appState;
     const { url, order } = focusImage;
+    let trans;
 
     if (url !== prevProps.appState.focusImage.url) {
       if (collection.length > 7) {
         if (order < 4) {
-          this.setState({
-            move: 'translate(0px)',
-          });
+          trans = 'translate(0px)';
         } else if (order === 4) {
-          this.setState({
-            move: 'translate(-55px)',
-          });
+          trans = 'translate(-55px)';
         } else if (order > 4 && order < collection.length - 3) {
-          this.setState({
-            move: `translate(-${(order - 4) * 110 + 55}px)`,
-          });
+          trans = `translate(-${(order - 4) * 110 + 55}px)`;
         } else if (order === collection.length - 3) {
-          this.setState({
-            move: `translate(-${(order - 4) * 110}px)`,
-          });
+          trans = `translate(-${(order - 4) * 110}px)`;
         } else if (order === collection.length - 2) {
-          this.setState({
-            move: `translate(-${(order - 5) * 110}px)`,
-          });
+          trans = `translate(-${(order - 5) * 110}px)`;
         } else if (order === collection.length - 1) {
-          this.setState({
-            move: `translate(-${(order - 6) * 110}px)`,
-          });
+          trans = `translate(-${(order - 6) * 110}px)`;
         } else if (order === collection.length) {
-          this.setState({
-            move: `translate(-${(order - 7) * 110}px)`,
-          });
-        } 
+          trans = `translate(-${(order - 7) * 110}px)`;
+        }
+
+        this.setState({
+          move: trans,
+        });
       }
     }
   }
