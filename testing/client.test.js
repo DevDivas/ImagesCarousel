@@ -79,7 +79,7 @@ describe('<Modal />', () => {
 
   it('should have the center image as the only image', () => {
     expect(wrapper.find('img').length).toBe(1);
-    expect(wrapper.find('.focusImage').length).toBe(1);    
+    expect(wrapper.find('.focusImage').length).toBe(1);
   });
 
 });
