@@ -40,9 +40,8 @@
 }
 
 .carousel-wrapper {
-  border: 1px dashed white;
   height: 67px;
-  /* overflow: hidden; */
+  overflow: hidden;
   width: 100%;
 }
 
@@ -52,5 +51,4 @@
   height: 67px;
   padding: 0;
   white-space: nowrap;
-  border: 1px solid red;
 }

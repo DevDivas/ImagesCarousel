@@ -17,7 +17,9 @@ class Carousel extends React.Component {
     const { focusImage, collection } = appState;
     const { url, order } = focusImage;
     // console.log(prevProps.appState.focusImage);
+    
     if (url !== prevProps.appState.focusImage.url) {
+      debugger;
       if (collection.length > 7) {
         console.log('order', order);
         console.log('collection length', collection.length);
@@ -29,31 +31,27 @@ class Carousel extends React.Component {
           this.setState({
             move: 'translate(-55px)',
           });
-        } else if (order > 4 && order < collection.length - 4) {
+        } else if (order > 4 && order < collection.length - 3) {
           this.setState({
             move: `translate(-${(order - 4) * 110 + 55}px)`,
           });
-        } else if (order === collection.length - 4) {
+        } else if (order === collection.length - 3) {
           this.setState({
             move: `translate(-${(order - 4) * 110}px)`,
           });
-        } else if (order === collection.length - 3) {
+        } else if (order === collection.length - 2) {
           this.setState({
             move: `translate(-${(order - 5) * 110}px)`,
           });
-        } else if (order === collection.length - 2) {
+        } else if (order === collection.length - 1) {
           this.setState({
             move: `translate(-${(order - 6) * 110}px)`,
           });
-        } else if (order === collection.length - 1) {
+        } else if (order === collection.length) {
           this.setState({
             move: `translate(-${(order - 7) * 110}px)`,
           });
-        } else if (order === collection.length) {
-          this.setState({
-            move: `translate(-${(order - 8) * 110}px)`,
-          });
-        }
+        } 
       }
     }
   }
