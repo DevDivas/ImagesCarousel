@@ -23,7 +23,7 @@ for (let homeId = 1; homeId <= 100; homeId += 1) {
   uniqId += 1;
 
   // handle bedroom
-  const numBR = getRandomIntInclusive(1,2);
+  const numBR = getRandomIntInclusive(1, 3);
   for (let i = 0; i < numBR; i += 1) {
     str += `${uniqId}, https://s3-us-west-1.amazonaws.com/homesnap/bedroom/b${getRandomIntInclusive(1,10)}.jpg, ${homeId}, ${order}, ${randomCaption()}\n`;
     order += 1;
@@ -31,12 +31,15 @@ for (let homeId = 1; homeId <= 100; homeId += 1) {
   }
 
   // handle kitchen
-  str += `${uniqId}, https://s3-us-west-1.amazonaws.com/homesnap/kitchen/k${getRandomIntInclusive(1,10)}.jpg, ${homeId}, ${order}, ${randomCaption()}\n`;
-  order += 1;
-  uniqId += 1;
+  const numKT = getRandomIntInclusive(1, 2);
+  for (let i = 0; i < numKT; i += 1) {
+    str += `${uniqId}, https://s3-us-west-1.amazonaws.com/homesnap/kitchen/k${getRandomIntInclusive(1,10)}.jpg, ${homeId}, ${order}, ${randomCaption()}\n`;
+    order += 1;
+    uniqId += 1;
+  }
 
   // handle diningroom
-  const numDR = getRandomIntInclusive(1, 2);
+  const numDR = getRandomIntInclusive(1, 3);
   for (let i = 0; i < numDR; i += 1) {
     str += `${uniqId}, https://s3-us-west-1.amazonaws.com/homesnap/dining/d${getRandomIntInclusive(1,10)}.jpg, ${homeId}, ${order}, ${randomCaption()}\n`;
     order += 1;
