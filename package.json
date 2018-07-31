@@ -20,6 +20,8 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^1.0.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "express": "^4.16.3",
     "mongoose": "^5.2.4",
     "nodemon": "^1.18.3",
@@ -39,8 +41,26 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.10.0",
     "jest": "^23.4.1",
+    "jest-css-modules": "^1.1.0",
+    "jest-environment-enzyme": "^6.0.2",
+    "jest-enzyme": "^6.0.2",
     "react-test-renderer": "^16.4.1",
     "webpack-cli": "^3.1.0"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "jest-enzyme",
+    "testEnvironment": "enzyme",
+    "testEnvironmentOptions": {
+      "enzymeAdapter": "react16"
+    },
+    "transform": {
+      ".*": "<rootDir>/node_modules/jest-css-modules"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx"
+    ]
   },
   "version": "1.0.0",
   "main": "index.js",
