@@ -10,7 +10,7 @@
   min-height: 368px;
 }
 
-input {
+.viewPhotosBtn {
   width: auto;
   height: auto;
   margin: 0;
@@ -27,22 +27,63 @@ input {
   letter-spacing: normal;
   color: #484848;
   cursor: pointer;
-}
 
-.viewPhotosBtn {
   position: absolute;
   bottom: 250px;
   left: 20px;
 }
 
 .shareBtn {
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 8px 16px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 4px;
+  background: #ffffff;
+  font-weight: 450;
+  font-size: 14px;
+  text-align: center;
+  line-height: 18px;
+  letter-spacing: normal;
+  color: #484848;
+  cursor: pointer;
+
   position: absolute;
   bottom: 540px;
   left: 85.5vw;
 }
 
 .saveBtn {
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 8px 16px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 4px;
+  background: #ffffff;
+  font-weight: 450;
+  font-size: 14px;
+  text-align: center;
+  line-height: 18px;
+  letter-spacing: normal;
+  color: #484848;
+  cursor: pointer;
+
   position: absolute;
   bottom: 540px;
-  left: 92.5vw;
+  left: 91vw;
+}
+
+.saveBtnIcon {
+  height: 15px;
+  width: 15px;
+  display: inline-block;
+  padding-right: 12px;
+  /* align-content: center; */
+  vertical-align: middle;
 }
