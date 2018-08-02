@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import Carousel from './Carousel.jsx';
+import style from '../css/modal.css';
 
-require('../css/modal.css');
 const React = require('react');
 
 const Modal = (
@@ -14,19 +14,19 @@ const Modal = (
     handleCarouselToggle,
   },
 ) => (
-  <div className={appState.showModal ? 'modal-on' : 'modal-off'}>
-    <span className="closeBtn" onClick={handleCloseClick} onKeyPress={() => ''} role="presentation">
+  <div className={appState.showModal ? style.modalOn : style.modalOff}>
+    <span className={style.closeBtn} onClick={handleCloseClick} onKeyPress={() => ''} role="presentation">
       &#9587;
     </span>
-    <div className="modal-content">
-      <span className="prevBtn" onClick={handlePrevBtnClick} onKeyPress={() => ''} role="presentation">
+    <div className={style.modalContent}>
+      <span className={style.prevBtn} onClick={handlePrevBtnClick} onKeyPress={() => ''} role="presentation">
         &#8249;
       </span>
-      <span className="nextBtn" onClick={handleNextBtnClick} onKeyPress={() => ''} role="presentation">
+      <span className={style.nextBtn} onClick={handleNextBtnClick} onKeyPress={() => ''} role="presentation">
         &#8250;
       </span>
-      <div className="focusContain">
-        <img src={appState.focusImage.url} className="focusImage" alt="" />
+      <div className={style.focusContain}>
+        <img src={appState.focusImage.url} className={style.focusImage} alt="" />
       </div>
       <Carousel appState={appState} handleThumbnailClick={handleThumbnailClick} handleCarouselToggle={handleCarouselToggle} />
     </div>
