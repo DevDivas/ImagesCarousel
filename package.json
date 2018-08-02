@@ -7,9 +7,11 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "watch": "webpack -d --watch",
-    "server": "nodemon server/listen.js",
-    "build": "node database/csv_gen.js && node database/index.js",
+    "webpackDev": "webpack -d --watch",
+    "serverDev": "nodemon server/listen.js",
+    "build": "webpack",
+    "start": "node server/listen.js",
+    "seed": "node database/csv_gen.js && node database/index.js",
     "test": "jest --coverage --forceExit"
   },
   "dependencies": {

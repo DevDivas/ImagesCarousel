@@ -4,6 +4,8 @@ const path = require('path');
 
 mongoose.connect('mongodb://localhost/assets');
 
+// mongoose.connect('mongodb://database/assets');
+
 // define schema
 const assetSchema = mongoose.Schema({
   id: { type: Number, unique: true },

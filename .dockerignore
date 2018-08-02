@@ -1,0 +1,5 @@
+.circle_ci
+coverage
+node_modules
+testing
+.gitignore
