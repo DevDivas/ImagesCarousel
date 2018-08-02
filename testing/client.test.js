@@ -28,25 +28,17 @@ describe('<Stage />', () => {
     expect(wrapper.find('.stage').length).toBe(1);
   });
 
-  it('should have 3 input elements', () => {
-    expect(wrapper.find('input').length).toBe(3);
-  });
-
   it('should have an input element with classname "viewPhotosBtn"', () => {
     expect(wrapper.find('.viewPhotosBtn').length).toBe(1);
   });
 
-  it('should have an input element with classname "shareBtn"', () => {
+  it('should have an button element with classname "shareBtn"', () => {
     expect(wrapper.find('.shareBtn').length).toBe(1);
   });
 
-  it('should have an input element with classname "saveBtn"', () => {
+  it('should have an button element with classname "saveBtn"', () => {
     expect(wrapper.find('.saveBtn').length).toBe(1);
   });
-
-  // it('should change showModal when banner is clicked', () => {
-  //   wrapper.find('input').simulate('click');
-  // });
 });
 
 describe('<Modal />', () => {
