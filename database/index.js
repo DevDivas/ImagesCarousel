@@ -2,9 +2,9 @@ const fs = require('fs');
 const mongoose = require('mongoose');
 const path = require('path');
 
-mongoose.connect('mongodb://localhost/assets');
+// mongoose.connect('mongodb://localhost/assets');
 
-// mongoose.connect('mongodb://database/assets');
+mongoose.connect('mongodb://database/assets');
 
 // define schema
 const assetSchema = mongoose.Schema({
