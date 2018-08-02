@@ -1,4 +1,4 @@
-.modal-off {
+.modalOff {
   display: none;
   position: fixed;
   z-index: 1;
@@ -10,7 +10,7 @@
   overflow: auto;
 }
 
-.modal-on {
+.modalOn {
   display: block;
   position: fixed;
   z-index: 1;
@@ -22,7 +22,7 @@
   overflow: auto;
 }
 
-.modal-content {
+.modalContent {
   background-color: transparent;
   position: relative;
   top: 12%;
