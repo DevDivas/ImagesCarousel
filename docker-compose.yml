@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  app:
+    image: "app_image1.3"
+    depends_on:
+      - 'database'
+    ports:
+      - '3001:3001'
+
+  database:
+    image: mongo:4.0.0
+    ports:
+      - '27017:27017'
