@@ -1,19 +1,21 @@
 body {
   margin: 0;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #656565;
 }
 
 .topBtnWrap {
   text-align: right;
   width: 100%;
-  position: absolute;
-  bottom: 538px;
+  position: relative;
+  bottom: 342px;
 }
 
 .botBtnWrap {
   text-align: left;
   width: 100%;
-  position: absolute;
-  bottom: 250px;
+  position: relative;
+  bottom: 95px;
 }
 
 .stage {
